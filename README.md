@@ -1,6 +1,34 @@
-## Running the Service
+<style>
 
-### Docker Testing
+.clip{
+  width:100%;
+  height:20%;
+  background: -webkit-gradient(linear,left top,left bottom,from(#FB6CAE), to(#7966FB));
+  font-size:51px;
+  font-family:'tahoma';
+  text-align:center;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 5px #FB6CAE, 0px 0px 10px #FB6CAE, 0px 0px 15px #7966FB, 0px 0px 2px #7966FB, 0px 0px 3px #7966FB, 0px 0px 3px #7966FB, 0px 0px 35px #ff5500;
+  
+}
+</style>
+
+<pre class="clip">
+      @@@@@@   @@@@@@@   @@@@@@@@@@    @@@@@@   @@@@@@@   @@@ @@@  
+      @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@ @@@ 
+      @@!  @@@  @@!  @@@  @@! @@! @@!  @@!  @@@  @@!  @@@  @@! !@@ 
+      !@!  @!@  !@!  @!@  !@! !@! !@!  !@!  @!@  !@!  @!@  !@! @!! 
+      @!@!@!@!  @!@!!@!   @!! !!@ @!@  @!@  !@!  @!@!!@!    !@!@!  
+      !!!@!!!!  !!@!@!    !@!   ! !@!  !@!  !!!  !!@!@!      @!!!  
+      !!:  !!!  !!: :!!   !!:     !!:  !!:  !!!  !!: :!!     !!:   
+      :!:  !:!  :!:  !:!  :!:     :!:  :!:  !:!  :!:  !:!   :!:    
+      ::   :::  ::   :::  :::     ::   ::::: ::  ::   :::   ::     
+      :   : :   :   : :   :      :     : :  :    :   : :    :      
+</pre>
+## Running Armory
+
+### Docker
 
 To build and run the service using Docker, follow these steps:
 
