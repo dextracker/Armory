@@ -61,7 +61,7 @@ sh backfill.sh
 
 Create a `.env` file in the root directory of your project and populate it with the following keys:
 
-```env
+```sh
 # RPC URL for the blockchain network you're connecting to
 FORK_URL={your rpc url here}
 
