@@ -1,31 +1,4 @@
-<style>
-
-.clip{
-  width:100%;
-  height:20%;
-  background: -webkit-gradient(linear,left top,left bottom,from(#FB6CAE), to(#7966FB));
-  font-size:51px;
-  font-family:'tahoma';
-  text-align:center;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 5px #FB6CAE, 0px 0px 10px #FB6CAE, 0px 0px 15px #7966FB, 0px 0px 2px #7966FB, 0px 0px 3px #7966FB, 0px 0px 3px #7966FB, 0px 0px 35px #ff5500;
-  
-}
-</style>
-
-<pre class="clip">
-      @@@@@@   @@@@@@@   @@@@@@@@@@    @@@@@@   @@@@@@@   @@@ @@@  
-      @@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@ @@@ 
-      @@!  @@@  @@!  @@@  @@! @@! @@!  @@!  @@@  @@!  @@@  @@! !@@ 
-      !@!  @!@  !@!  @!@  !@! !@! !@!  !@!  @!@  !@!  @!@  !@! @!! 
-      @!@!@!@!  @!@!!@!   @!! !!@ @!@  @!@  !@!  @!@!!@!    !@!@!  
-      !!!@!!!!  !!@!@!    !@!   ! !@!  !@!  !!!  !!@!@!      @!!!  
-      !!:  !!!  !!: :!!   !!:     !!:  !!:  !!!  !!: :!!     !!:   
-      :!:  !:!  :!:  !:!  :!:     :!:  :!:  !:!  :!:  !:!   :!:    
-      ::   :::  ::   :::  :::     ::   ::::: ::  ::   :::   ::     
-      :   : :   :   : :   :      :     : :  :    :   : :    :      
-</pre>
+![ArmoryLogo](https://cdn.discordapp.com/attachments/161253120309985280/1158085635987492864/armoryLogo.svg?ex=651af6cb&is=6519a54b&hm=c0606d56f8cf82db28f1ee867e6f96e0c6d5b7431dfc8bbb0e69a126de6efb2a&)
 ## Running Armory
 
 ### Docker
