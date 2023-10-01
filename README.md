@@ -28,7 +28,7 @@ To test the service locally, you can simply run the `backfill.sh` script:
 
 ```bash
 sh backfill.sh
-
+```
 ## Environment Setup
 
 Create a `.env` file in the root directory of your project and populate it with the following keys:
@@ -57,6 +57,7 @@ SUPABASE_PASSWORD={your supabase login password}
 
 # Anvil URL for your local setup (needs to be anvil as anvil only rpc commands are used)
 ANVIL_URL=http://127.0.0.1:8545
+```
 
 
 ## Adding Additional Contracts and ABIs to Wagmi Configuration
