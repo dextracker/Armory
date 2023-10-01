@@ -92,8 +92,8 @@ function startProcess(argv: {
 			`--fork-url=${process.env.FORK_URL}`,
 			`--fork-block-number=${blockNumber}`,
 		],
-		//{ stdio: ['pipe', 'pipe', process.stderr] }
-		{ stdio: 'inherit' }
+		{ stdio: ['pipe', 'pipe', process.stderr] }
+		//{ stdio: 'inherit' }
 	);
 
 	processInstance.on('error', (error: Error) => {
