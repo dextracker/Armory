@@ -2,7 +2,7 @@ import { defineConfig } from '@wagmi/cli'
 import { react } from '@wagmi/cli/plugins'
 import {config} from 'dotenv';
 import { erc20ABI } from 'wagmi';
-import {WtchTwrAbi} from './src/WatchTowerAbi';
+import {WtchTwrAbi, uniswapV3FactoryAbi, uniswapV3PoolAbi} from './src/WatchTowerAbi';
 config();
 
 async function fetchABI(address: string) {
@@ -35,6 +35,14 @@ export default defineConfig(async () => {
           {
             name: 'erc20',
             abi: erc20ABI,
+          },
+          {
+            name: 'uniswapV3Pool',
+            abi: uniswapV3PoolAbi,
+          },
+          {
+            name: 'uniswapV3Factory',
+            abi: uniswapV3FactoryAbi,
           },
           {
             name: 'WtchTwr',
