@@ -373,13 +373,13 @@ async function startObservation(): Promise<void> {
 			endBlock: number;
 		};
 
-		await backfill(argv.token0, argv.token1, argv.feeTier);
+		const skip = await backfill(argv.token0, argv.token1, argv.feeTier);
 
 		if (processInstance) {
 			processInstance.kill();
 			console.log('	cleaning up old processes.....');
 		}
-		blockNumber += increment;
+		blockNumber += skip;
 		const targetBlock = argv.endBlock ? argv.endBlock : realBlockNumber;
 		if (targetBlock < blockNumber) {
 			if (argv.endBlock) {
@@ -405,7 +405,7 @@ async function startObservation(): Promise<void> {
 	}
 }
 
-async function backfill(token0: string, token1: string, feeTier: number) {
+async function backfill(token0: string, token1: string, feeTier: number): Promise<number> {
 	const token0decimals = await anvilClient.readContract({
 		address: token0 as `0x${string}`,
 		abi: erc20ABI,
@@ -417,13 +417,14 @@ async function backfill(token0: string, token1: string, feeTier: number) {
 		functionName: 'decimals',
 	});
 
-	await backfillObservationsArray(
+	const skip  = await backfillObservationsArray(
 		token0,
 		token1,
 		feeTier,
 		token0decimals,
 		token1decimals
 	);
+	return skip
 }
 
 async function WatchTowerBackfill() {

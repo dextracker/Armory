@@ -1,7 +1,7 @@
 /** @format */
 import kleur from 'kleur';
 import gradient = require('gradient-string');
-import { erc20ABI, wtchTwrABI } from './WtchTwrArtifacts';
+import { erc20ABI, uniswapV3FactoryABI, uniswapV3PoolABI, wtchTwrABI } from './WtchTwrArtifacts';
 import {
 	PublicClient,
 	createPublicClient,
@@ -60,7 +60,7 @@ export async function backfillObservationsArray(
 	feeTier: number,
 	token0decimals: number,
 	token1decimals: number
-) {
+): Promise<number> {
 
   //wallet client for deploying to forked network 
 	const walletClient = createWalletClient({
@@ -127,6 +127,14 @@ export async function backfillObservationsArray(
 		args: [token0 as `0x${string}`, token1 as `0x${string}`, feeTier],
 	});
 
+	const temp = await client.readContract({
+		address: pool as `0x${string}`,
+		abi: uniswapV3PoolABI,
+		functionName: 'slot0',
+	})
+
+	const blockSkip = temp[3]-temp[2];
+
 	let observations: Observations = [];
 	_data?.forEach((_observation) => {
 		let observation: Observation = {
@@ -170,7 +178,11 @@ export async function backfillObservationsArray(
 		} Observations for pool ${pool}`
 	) : console.log(
 		`🏰 no new observations.....`
+		,` 		🏰 WtchTwr: skipping ${blockSkip} blocks`,
+		`${queryResult.count}`
 	);
+
+	return blockSkip;
 }
 
 export function convertSqrtX96(
