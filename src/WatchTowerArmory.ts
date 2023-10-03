@@ -504,7 +504,8 @@ async function WatchTowerBackfill() {
 		latestDbBlock = Number(block.number) - blocks;
 	}
 	let startBlock;
-	if(latestDbBlock) {
+	//only backfill from the last observation in the database if the user has not specified a start block
+	if(latestDbBlock && !argv.startBlock) {
 		let args = {
 			feeTier: argv.feeTier,
 			token0: argv.token0,
@@ -515,7 +516,11 @@ async function WatchTowerBackfill() {
 	
 		await startProcess(args);
 
-	}else {
+	} 
+	else if(argv.startBlock) { //if the user has specified a start block, backfill starting from that block
+		await startProcess(argv);
+	}
+	else {
 		console.log(
 			`Finding Creation Block for pair: ${argv.token0}/${argv.token1} : ${argv.feeTier}`
 		);

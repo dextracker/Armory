@@ -50,3 +50,5 @@ next-env.d.ts
 
 out
 cache
+
+findBlock.sh
