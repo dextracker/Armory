@@ -11,7 +11,7 @@
 		"build:docker": "docker build /Users/0xnoah/WatchTower/WatchTowerBackfill/ -t watch-tower-armory",
 		"generate:db": "supabase gen types typescript --project-id dstpewnznldbuklvkysm > database.types.ts",
 		"generate:contracts": "yarn wagmi generate",
-		"backfill": "yarn generate:contracts && yarn ts-node src/WatchTowerArmory.ts --token0=0x27D2DECb4bFC9C76F0309b8E88dec3a601Fe25a8 --token1=0x4200000000000000000000000000000000000006 --feeTier=10000 --startBlock=3200000  "
+		"backfill": "yarn generate:contracts && yarn ts-node src/WatchTowerArmory.ts --token0=0x27D2DECb4bFC9C76F0309b8E88dec3a601Fe25a8 --token1=0x4200000000000000000000000000000000000006 --feeTier=10000 --startBlock=4294542  "
 	},
 	"dependencies": {
 		"@supabase/supabase-js": "^2.36.0",

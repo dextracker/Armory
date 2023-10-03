@@ -164,10 +164,12 @@ export async function backfillObservationsArray(
 	if (queryResult.error) {
 		console.error(queryResult.error);
 	}
-	console.log(
+	queryResult.count! > 0 ? console.log(
 		`🏰 WtchTwr: Added ${
 			queryResult.count != null ? queryResult.count : 0
 		} Observations for pool ${pool}`
+	) : console.log(
+		`🏰 no new observations.....`
 	);
 }
 

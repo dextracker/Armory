@@ -377,7 +377,7 @@ async function startObservation(): Promise<void> {
 
 		if (processInstance) {
 			processInstance.kill();
-			console.log('Anvil process killed');
+			console.log('	cleaning up old processes.....');
 		}
 		blockNumber += increment;
 		const targetBlock = argv.endBlock ? argv.endBlock : realBlockNumber;
@@ -396,7 +396,7 @@ async function startObservation(): Promise<void> {
 			blockNumber = realBlockNumber;
 		}
 		console.log(
-			`🏰 WtchTwr: Observation completed, restarting Anvil @ BlockHeight ${blockNumber} ${targetBlockTimestamp.toLocaleDateString()}`
+			`🏰 WtchTwr: Observation completed, restarting Anvil @ BlockHeight ${blockNumber} ${targetBlockTimestamp.toLocaleString()}`
 		);
 
 		await startProcess(argv);
